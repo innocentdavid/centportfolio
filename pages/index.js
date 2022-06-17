@@ -6,10 +6,11 @@ import { BsGithub } from 'react-icons/bs';
 export default function Home() {
 
   return (
-    <div className="max-w-[1400px] bg-[#212121] text-white select-none">
+    // <div className="max-w-[1400px] select-none dark:bg-white dark:text-[#212121] bg-[#212121] text-[#eeeeee]">
+    <div className="max-w-[1400px] select-none">
       <Header />
       <section className="flex justify-around items-center pt-20">
-        <div>
+        <div className="hidden md:block">
           <Image src="/images/4848341.png" alt='' width="349px" height="333px" />
         </div>
         <div style={{ fontFamily: 'Noto Sans', maxWidth: '461px' }}>
@@ -142,7 +143,7 @@ export default function Home() {
       <section className="grid place-items-center text-center mt-20" style={{ padding: '0 15%' }}>
         <h1 className="mb-10" style={{ fontFamily: 'Cooper', fontSize: 45, fontWeight: 900 }}>Services</h1>
 
-        <div className="flex justify-center items-center text-center">
+        <div className="flex justify-center items-center flex-wrap md:flex-nowrap text-center">
           <div className="border px-5 py-3 flex flex-col justify-center">
             <div><Image src="/images/Icon awesome-pencil-ruler.png" alt="" width="50" height="50" /></div>
             <div className="mb-5 font-[Roboto] font-bold text-2xl text-white">Design</div>
@@ -198,23 +199,23 @@ export default function Home() {
 
         <p className="mt-4 px-[15%]">Astute Full Stack Software Engineer with over 3 years of experience in Web development. offers expansive experience, supporting test case development and verification testing. Works collaboratively to design and build user</p>
         
-        <div className="mt-10 flex justify-between items-center gap-36">
-          <div className="text-4xl">{`<`}</div>
-          <div className="flex gap-5">
-            <Image src="/images/M.B Mainsara.png" alt="" width="50px" height="50px" />
+        <div className="mt-10 flex justify-between items-center gap-20 md:gap-20 lg:gap-36">
+          {/* <div className="text-4xl">{`<`}</div> */}
+          <div className="flex flex-col md:flex-row justify-center gap-5">
+            <div><Image src="/images/M.B Mainsara.png" alt="" width="50px" height="50px" /></div>
             <div className="text-center">
               <div className="font-bold">M.B Mainasara</div> The CEO Blue chip universal services
             </div>
           </div>
-          <div className="font-black text-4xl">{`>`}</div>
+          {/* <div className="font-black text-4xl">{`>`}</div> */}
         </div>
       </section>
 
-      <footer className="mt-28 pb-10 flex justify-center items-center gap-32">
-        <div className="flex items-center gap-10">
+      <footer className="mt-28 pb-10 flex flex-col justify-center items-center gap-5 md:gap-20 lg:gap-32">
+        <div className="flex flex-col-reverse items-center gap-10">
           <div style={{ padding: '10px 30px', background: 'var(--main-color)', color: 'black' }}>
               Contact me</div>
-          <ul className="text-base text-[#97979C] flex gap-8" style={{ fontFamily: 'Noto Sans', fontWeight: '500' }}>
+          <ul className="text-base flex gap-8" style={{ fontFamily: 'Noto Sans', fontWeight: '500' }}>
             <li className="active">Portfolio</li>
             <li>About</li>
             <li>Contact</li>

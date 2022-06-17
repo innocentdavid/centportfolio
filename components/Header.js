@@ -1,22 +1,21 @@
-import { useEffect, useState } from 'react'
-import {useTheme} from 'next-themes'
+import { useEffect } from 'react'
+import { useTheme } from 'next-themes'
 
-import { FiFacebook } from 'react-icons/fi';
-import { FiTwitter } from 'react-icons/fi';
-import { FiSend } from 'react-icons/fi';
+import { FiFacebook, FiSend, FiTwitter } from 'react-icons/fi';
+import { MdDarkMode } from 'react-icons/md';
+import { RiWhatsappFill } from 'react-icons/ri';
+import { FaUserTie } from 'react-icons/fa';
 
 export default function Header() {
-  const {theme, setTheme} = useTheme()
+  const { theme, setTheme } = useTheme()
 
   useEffect(() => {
     const handleScroll = () => {
       let header = document.querySelector('#header');
       if (header && window.scrollY > 100) {
-        console.log(">100", window.scrollY)
         header?.classList.remove("top-10", "mx-20");
         header?.classList.add("top-0", "mx-0");
       } else {
-        console.log("100", window.scrollY)
         header?.classList.remove("top-0", "mx-0");
         header?.classList.add("top-10", "mx-20");
       }
@@ -32,51 +31,37 @@ export default function Header() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const [showMobileMenu, setShowMobileMenu] = useState(false);
-  
   return (<>
-  <div id="header" className="bg-[#212121] sticky top-10 mx-20 border border-[#97979C] z-50 px-20 py-5 flex justify-between items-center">
-    <div className="text-lg" style={{ fontFamily: 'Muli, Arial', fontWeight: '700' }}>CENT</div>
-    <ul className="text-base text-[#97979C] flex gap-8" style={{ fontFamily: 'Noto Sans', fontWeight: '500' }}>
-      <li className="active">Portfolio</li>
-      <li>About</li>
-      <li>Contact</li>
-    </ul>
-    <div className="flex gap-10">
-      <FiFacebook />
-      <FiTwitter />
-      <FiSend />
-    </div>
-  </div>
-
-    {/* <header className="flex items-center justify-between sticky top-0 drop-shadow shadow-gray-600 px-20 py-5">
-      <div style={{ width: 50 }}><h3 className="text-baseColor text-lg font-black">LOGO</h3></div>
-      <div className="flex items-center">
-        <div className="mr-16">
-        </div>
-        <div className={`mr-16 relative`}>
-          <FaRegCaretSquareDown size="1.3em" />
-          <span style={{ position: 'absolute', top: -5, right: -10, fontSize: '.6em', background: 'var(--main-color)', color: 'white', width: 18, height: 18, borderRadius: '50%', display: 'grid', placeItems: 'center' }}>7</span>
-        </div>
-        <div className={`mr-10 relative`}>
-          <BsFillBellFill size="1.3em" />
-          <span style={{ position: 'absolute', top: -5, right: -10, fontSize: '.6em', background: 'var(--main-color)', color: 'white', width: 18, height: 18, borderRadius: '50%', display: 'grid', placeItems: 'center' }}>7</span>
-        </div>
-        <div className={`mr-10 mt-1`}>
-          <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
-            {theme === 'dark' ? <MdDarkMode size="1.3em" /> : <MdOutlineDarkMode size="1.3em" />}
-          </button>
-        </div>
-        <div className="default-btn">start selling</div>
+    <div id="header" className="sticky top-10 mx-20 border border-[#bebed8] z-50 px-4 md:px-20 py-5 flex justify-between items-center">
+      <div className="font-black text-lg flex gap-2 items-center" style={{ fontFamily: 'Muli, Arial' }}>
+        <FaUserTie /> CENT
       </div>
-    </header>
-    <div className="flex items-center justify-evenly bg-[#EB004E] text-white p-1 py-2">
-      <div className="cursor-pointer">Products</div>
-      <div className="cursor-pointer">Businesses</div>
-      <div className="cursor-pointer">Job Vacancies</div>
-      <div className="cursor-pointer">Articles</div>
-    </div> */}
+      <button data-collapse-toggle="mobile-menu" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+        <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+      </button>
+      
+      <ul className="hidden text-base md:flex gap-8" style={{ fontFamily: 'Noto Sans', fontWeight: '500' }}>
+        <li className="active">Portfolio</li>
+        <li>About</li>
+        <li>Contact</li>
+      </ul>
+      <div className="hidden md:flex gap-10">
+        <FiFacebook />
+        <FiTwitter />
+        <FiSend />
+      </div>
+    </div>
 
+    <div className="fixed bottom-10 right-10">
+      <div className="" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
+        <MdDarkMode size="1.7em" />
+      </div>
+      <div className="mt-5">
+        <RiWhatsappFill size="1.7em" />
+      </div>
+    </div>
   </>
   )
 }
