@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --main-color:#34ffc8;
+}
+
+.root,
+#root,
+#docs-root {
+  --primary: #EB004E;
+  --secondary: #8cb1e2;
+  --accent: #718096;
+  --background: #fff;
+  --main: #EB004E;
+  --header: #2d3748;
+}
+
+.theme-light {
+  --background: #fff;
+  --main: #0d0106;
+  --header: #2d3748;
+}
+
+.theme-dark {
+  --background: #0e141b;
+  --main: #ffffff;
+  --header: #eaeaea;
+}
+
+.default-btn {
+  background: var(--main-color);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-family: Montserrat, sans-serif;
+  font-size: .9em;
+}
+
+.active {
+  color: white;
+}
+
+.active::after {
+  content: "";
+  display: block;
+  width: 42px;
+  height: 2px;
+  border: 2px;
+  background: 'red';
+  color: var(--main-color);
+  position: relative;
+  top: 10px;
+}
+
+#workCard:hover #workCardOverlay {
+  top: 0;
+}
