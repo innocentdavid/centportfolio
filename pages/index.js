@@ -9,14 +9,14 @@ export default function Home() {
     // <div className="max-w-[1400px] select-none dark:bg-white dark:text-[#212121] bg-[#212121] text-[#eeeeee]">
     <div className="max-w-[1400px] select-none">
       <Header />
-      <section className="flex justify-around items-center pt-20">
+      <section className="flex justify-around items-center pt-24 md:pt-32">
         <div className="hidden md:block">
           <Image src="/images/4848341.png" alt='' width="349px" height="333px" />
         </div>
-        <div style={{ fontFamily: 'Noto Sans', maxWidth: '461px' }}>
+        <div className="px-5" style={{ fontFamily: 'Noto Sans', maxWidth: '461px' }}>
           <div style={{ fontSize: '18px', marginBottom: -20 }}>HI THERE, I'M</div>
-          <div className="text-[80px] font-black" style={{ fontFamily: '"Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji' }}>cent</div>
-          <div style={{ fontSize: '25px', fontWeight: '700' }}>
+          <div className="text-[80px] font-black" style={{ fontFamily: '"Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji', marginLeft: -2 }}>cent</div>
+          <div className="font-bold text-xl md:text-2xl">
             <div className="flex gap-5">
               <div>Full Stack Software Engineer</div>
               <Image src="/plus.svg" alt="plus" width="25px" height="25px" />
@@ -25,22 +25,20 @@ export default function Home() {
           </div>
           <p style={{ fontSize: 18, marginTop: 10 }}>Astute Full Stack Software Engineer with over 3 years of experience in Web development.</p>
           <div className="flex gap-12 mt-3">
-            <div
-              style={{ padding: '10px 30px', borderRadius: 1000, background: 'var(--main-color)', color: 'black' }}>
-              Hire me</div>
-            <div style={{ padding: '10px 30px', borderRadius: 1000, border: '1px solid var(--main-color)', color: 'var(--main-color)' }}>My Resume</div>
+            <div className="py-2 px-7 rounded-full text-black" style={{ background: 'var(--main-color)' }}>Hire me</div>
+            <div className="py-2 px-7 rounded-full" style={{ border: '1px solid var(--main-color)' }}>My Resume</div>
           </div>
         </div>
       </section>
 
-      <section className="grid place-items-center text-center mt-28" style={{ padding: '0 15%' }}>
+      <section className="grid place-items-center text-center m-auto mt-28 px-8 md:px-32">
         <h1 className="mb-5" style={{ fontFamily: 'Cooper', fontSize: 45, fontWeight: 900 }}>About me</h1>
 
         <p style={{ fontFamily: 'Noto Sans', fontSize: 20 }}>I'm Paul Innocent. Astute Full Stack Software Engineer with over 3 years of experience in Web development. offers expansive experience, supporting test case development and verification testing. Works collaboratively to design and build user interfaces. Driven and ambitious technology professional with high-level Software proficiency.</p>
 
         <div className='mt-10 mb-10'><Image src="/images/IMG_20220329_202933_246.png" alt="" width="184px" height="184px" /></div>
 
-        <div className="flex items-center gap-10">
+        <div className="flex flex-col md:flex-row items-center gap-10">
           <div style={{ padding: '10px 30px', background: 'var(--main-color)', color: 'black' }}>
             Contact me</div>
           <div className="flex gap-10">
@@ -114,7 +112,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="grid place-items-center text-center mt-28" style={{ padding: '0 15%' }}>
+      <section className="grid place-items-center text-center m-auto mt-28 px-8 md:px-32">
         <h1 className="mb-5" style={{ fontFamily: 'Cooper', fontSize: 45, fontWeight: 900 }}>My Skillsets</h1>
 
         <p style={{ fontFamily: 'Noto Sans', fontSize: 20 }}>I started learn programming at a very young age so I learn a lot of thing, did a lot of practicals. I actually focused on both frontend and backend but I also have wide knowledge on programming.</p>
@@ -140,7 +138,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="grid place-items-center text-center mt-20" style={{ padding: '0 15%' }}>
+      <section className="grid place-items-center text-center m-auto mt-20 px-8 md:px-32">
         <h1 className="mb-10" style={{ fontFamily: 'Cooper', fontSize: 45, fontWeight: 900 }}>Services</h1>
 
         <div className="flex justify-center items-center flex-wrap md:flex-nowrap text-center">
@@ -192,7 +190,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="grid place-items-center text-center mt-20" style={{ padding: '0 15%' }}>
+      <section className="grid place-items-center text-center mt-20 px-8 md:px-32">
         <h1 className="mb-10" style={{ fontFamily: 'Cooper', fontSize: 45, fontWeight: 900 }}>Testimonies</h1>
 
         <Image src="/images/Icon awesome-quote-left.png" alt="" width="50px" height="50px" />

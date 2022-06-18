@@ -17,7 +17,7 @@
   --header: #2d3748;
 }
 
-.theme-light {
+/* .theme-light {
   --background: #fff;
   --main: #0d0106;
   --header: #2d3748;
@@ -27,7 +27,7 @@
   --background: #0e141b;
   --main: #ffffff;
   --header: #eaeaea;
-}
+} */
 
 .default-btn {
   background: var(--main-color);
