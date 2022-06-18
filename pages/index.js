@@ -24,7 +24,7 @@ export default function Home() {
             <div>WordPress Expert</div>
           </div>
           <p style={{ fontSize: 18, marginTop: 10 }}>Astute Full Stack Software Engineer with over 3 years of experience in Web development.</p>
-          <div className="flex gap-12 mt-3">
+          <div className="flex gap-8 md:gap-12 mt-3">
             <div className="py-2 px-7 rounded-full text-black" style={{ background: 'var(--main-color)' }}>Hire me</div>
             <div className="py-2 px-7 rounded-full" style={{ border: '1px solid var(--main-color)' }}>My Resume</div>
           </div>
@@ -39,13 +39,8 @@ export default function Home() {
         <div className='mt-10 mb-10'><Image src="/images/IMG_20220329_202933_246.png" alt="" width="184px" height="184px" /></div>
 
         <div className="flex flex-col md:flex-row items-center gap-10">
-          <div style={{ padding: '10px 30px', background: 'var(--main-color)', color: 'black' }}>
-            Contact me</div>
-          <div className="flex gap-10">
-            <FiFacebook />
-            <FiTwitter />
-            <FiSend />
-          </div>
+          <div style={{ padding: '10px 30px', background: 'var(--main-color)', color: 'black' }}>Contact me</div>
+          <div className="flex gap-10"><FiFacebook /> <FiTwitter /> <FiSend /></div>
         </div>
       </section>
 
@@ -165,7 +160,7 @@ export default function Home() {
             <fieldset class="border-t border-slate-300 mt-10 mb-2 font-[Roboto] font-semibold text-xl text-white">
               <legend class="mx-auto px-4">Tools</legend>
             </fieldset>
-            
+
             <div className="">WordPress</div>
             <div className="">HTML</div>
             <div className="">CSS</div>
@@ -180,7 +175,7 @@ export default function Home() {
             <fieldset class="border-t border-slate-300 mt-10 mb-2 font-[Roboto] font-semibold text-xl text-white">
               <legend class="mx-auto px-4">Tools</legend>
             </fieldset>
-            
+
             <div className="">Python</div>
             <div className="">PHP</div>
             <div className="">Node Js</div>
@@ -196,7 +191,7 @@ export default function Home() {
         <Image src="/images/Icon awesome-quote-left.png" alt="" width="50px" height="50px" />
 
         <p className="mt-4 px-[15%]">Astute Full Stack Software Engineer with over 3 years of experience in Web development. offers expansive experience, supporting test case development and verification testing. Works collaboratively to design and build user</p>
-        
+
         <div className="mt-10 flex justify-between items-center gap-20 md:gap-20 lg:gap-36">
           {/* <div className="text-4xl">{`<`}</div> */}
           <div className="flex flex-col md:flex-row justify-center gap-5">
@@ -209,21 +204,16 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="mt-28 pb-10 flex flex-col justify-center items-center gap-5 md:gap-20 lg:gap-32">
-        <div className="flex flex-col-reverse items-center gap-10">
-          <div style={{ padding: '10px 30px', background: 'var(--main-color)', color: 'black' }}>
-              Contact me</div>
+      <footer className="mt-28 pb-10 flex flex-col md:flex-row justify-center items-center gap-5 md:gap-20 lg:gap-32">
+        <div className="flex flex-col-reverse md:flex-row items-center gap-10">
+          <div style={{ padding: '10px 30px', background: 'var(--main-color)', color: 'black' }}>Contact me</div>
           <ul className="text-base flex gap-8" style={{ fontFamily: 'Noto Sans', fontWeight: '500' }}>
             <li className="active">Portfolio</li>
             <li>About</li>
             <li>Contact</li>
           </ul>
         </div>
-        <div className="flex gap-10">
-          <FiFacebook />
-          <FiTwitter />
-          <FiSend />
-        </div>
+        <div className="flex gap-10"><FiFacebook /> <FiTwitter /> <FiSend /></div>
       </footer>
     </div>
   )
