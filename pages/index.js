@@ -1,12 +1,61 @@
 import Image from 'next/image';
 import Header from "../components/Header";
+import Modal from 'react-modal'
+
 import { FiFacebook, FiTwitter, FiSend } from 'react-icons/fi';
 import { BsGithub } from 'react-icons/bs';
+import { useState } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 export default function Home() {
+  const router = useRouter()
+  const currentPage = router.pathname
 
-  return (
-    // <div className="max-w-[1400px] select-none dark:bg-white dark:text-[#212121] bg-[#212121] text-[#eeeeee]">
+  const [projects, setProjects] = useState([
+    { description: 'A dynamic and innovative Transparent and Logistic Company with a strategic specialization, providing solution.', role: 'Full development', imgUrl: '/images/Group 26.png', logoUrl: '/images/Blue-chip logo 2.png' },
+    { description: 'A dynamic and innovative Transparent and Logistic Company with a strategic specialization, providing solution.', role: 'Full development', imgUrl: '/images/Group 27.png', logoUrl: '/images/Blue-chip logo 2.png' },
+    { description: 'A dynamic and innovative Transparent and Logistic Company with a strategic specialization, providing solution.', role: 'Full development', imgUrl: '/images/Group 28.png', logoUrl: '/images/Blue-chip logo 2.png' },
+    { description: 'A dynamic and innovative Transparent and Logistic Company with a strategic specialization, providing solution.', role: 'Full development', imgUrl: '/images/Group 29.png', logoUrl: '/images/Blue-chip logo 2.png' },
+    { description: 'A dynamic and innovative Transparent and Logistic Company with a strategic specialization, providing solution.', role: 'Full development', imgUrl: '/images/Group 30.png', logoUrl: '/images/Blue-chip logo 2.png' },
+    { description: 'A dynamic and innovative Transparent and Logistic Company with a strategic specialization, providing solution.', role: 'Full development', imgUrl: '/images/Group 31.png', logoUrl: '/images/Blue-chip logo 2.png' },
+  ]);
+
+  return (<>
+  <Modal
+      isOpen={router.query.modal === 'contact'}
+      onRequestClose={() => router.push(`${currentPage}`)}
+      style={{
+        overlay: {
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: 'rgba(255, 255, 255, 0.75)',
+          zIndex: 50,
+        },
+        content: {
+          position: 'absolute',
+          top: '50px',
+          left: '50px',
+          right: '50px',
+          bottom: '50px',
+          border: '1px solid #ccc',
+          background: '#fff',
+          color: '#000',
+          overflow: 'auto',
+          WebkitOverflowScrolling: 'touch',
+          borderRadius: '4px',
+          outline: 'none',
+          padding: '20px',
+          // width: 300
+        }
+      }}
+    >
+      INNOCENTPAUL2918@GMAIL.COM
+    </Modal>
+
     <div className="max-w-[1400px] select-none">
       <Header />
       <section className="flex justify-around items-center pt-24 md:pt-32">
@@ -25,13 +74,13 @@ export default function Home() {
           </div>
           <p style={{ fontSize: 18, marginTop: 10 }}>Astute Full Stack Software Engineer with over 3 years of experience in Web development.</p>
           <div className="flex gap-8 md:gap-12 mt-3">
-            <div className="py-2 px-7 rounded-full text-black" style={{ background: 'var(--main-color)' }}>Hire me</div>
+            <div className="py-2 px-7 rounded-full text-black" style={{ background: 'var(--main-color)' }}><Link href="/?modal=contact" as={`${router.pathname}/contact`}><a>Hire me</a></Link></div>
             <div className="py-2 px-7 rounded-full" style={{ border: '1px solid var(--main-color)' }}>My Resume</div>
           </div>
         </div>
       </section>
 
-      <section className="grid place-items-center text-center m-auto mt-28 px-8 md:px-32">
+      <section id="about" className="grid place-items-center text-center m-auto mt-28 px-8 md:px-32">
         <h1 className="mb-5" style={{ fontFamily: 'Cooper', fontSize: 45, fontWeight: 900 }}>About me</h1>
 
         <p style={{ fontFamily: 'Noto Sans', fontSize: 20 }}>I'm Paul Innocent. Astute Full Stack Software Engineer with over 3 years of experience in Web development. offers expansive experience, supporting test case development and verification testing. Works collaboratively to design and build user interfaces. Driven and ambitious technology professional with high-level Software proficiency.</p>
@@ -39,7 +88,7 @@ export default function Home() {
         <div className='mt-10 mb-10'><Image src="/images/IMG_20220329_202933_246.png" alt="" width="184px" height="184px" /></div>
 
         <div className="flex flex-col md:flex-row items-center gap-10">
-          <div style={{ padding: '10px 30px', background: 'var(--main-color)', color: 'black' }}>Contact me</div>
+          <div style={{ padding: '10px 30px', background: 'var(--main-color)', color: 'black' }}><Link href="/?modal=contact" as={`${router.pathname}/contact`}><a>Contact</a></Link></div>
           <div className="flex gap-10"><FiFacebook /> <FiTwitter /> <FiSend /></div>
         </div>
       </section>
@@ -48,62 +97,24 @@ export default function Home() {
         <div className="text-center text-5xl font-black font-[Cooper] mb-10">My Recent Works</div>
 
         <div className="flex flex-wrap gap-16 justify-center">
-          <div id="workCard" className="" style={{ position: 'relative', overflow: 'hidden' }}>
-            <Image src="/images/Group 31.png" alt="" width="315" height="365" />
-            <div id="workCardOverlay" className="absolute top-[98%] left-0 w-full h-full bg-[#00261Cbb] flex flex-col items-center justify-center duration-500 ease-in-out">
-              <div><Image src="/images/Blue-chip logo 2.png" alt="" width="107" height="123px" /></div>
-              <div className="font-[Arial] font-black text-2xl text-center mt-5">
-                <div>Full Web</div> Development</div>
+          {projects?.map((project, index) => (
+            <div key={index} id="workCard" className="" style={{ position: 'relative', overflow: 'hidden' }}>
+              <Image src={project?.imgUrl} alt="" width="315" height="365" />
+              <div id="workCardOverlay" className="absolute top-[98%] left-0 w-full h-full bg-[#00261Cbb] flex flex-col items-center justify-center duration-500 ease-in-out">
+                <div><Image src={project?.logoUrl} alt="" width="107" height="123px" /></div>
+                <div className="text-center mt-5 px-3">
+                  <p className="text-sm">{project?.description}</p>
+                  <div className="font-[Arial] font-black text-base mt-3"><span style={{ color: 'var(--main-color)' }}>Role: </span>{project.role}</div></div>
+              </div>
             </div>
-          </div>
-
-          <div id="workCard" className="" style={{ position: 'relative', overflow: 'hidden' }}>
-            <Image src="/images/Group 29.png" alt="" width="315" height="365" />
-            <div id="workCardOverlay" className="absolute top-[98%] left-0 w-full h-full bg-[#00261Cbb] flex flex-col items-center justify-center duration-500 ease-in-out">
-              <div><Image src="/images/Blue-chip logo 2.png" alt="" width="107" height="123px" /></div>
-              <div className="font-[Arial] font-black text-2xl text-center mt-5">
-                <div>Full Web</div> Development</div>
-            </div>
-          </div>
-          <div id="workCard" className="" style={{ position: 'relative', overflow: 'hidden' }}>
-            <Image src="/images/Group 27.png" alt="" width="315" height="365" />
-            <div id="workCardOverlay" className="absolute top-[98%] left-0 w-full h-full bg-[#00261Cbb] flex flex-col items-center justify-center duration-500 ease-in-out">
-              <div><Image src="/images/Blue-chip logo 2.png" alt="" width="107" height="123px" /></div>
-              <div className="font-[Arial] font-black text-2xl text-center mt-5">
-                <div>Full Web</div> Development</div>
-            </div>
-          </div>
-          <div id="workCard" className="" style={{ position: 'relative', overflow: 'hidden' }}>
-            <Image src="/images/Group 30.png" alt="" width="315" height="365" />
-            <div id="workCardOverlay" className="absolute top-[98%] left-0 w-full h-full bg-[#00261Cbb] flex flex-col items-center justify-center duration-500 ease-in-out">
-              <div><Image src="/images/Blue-chip logo 2.png" alt="" width="107" height="123px" /></div>
-              <div className="font-[Arial] font-black text-2xl text-center mt-5">
-                <div>Full Web</div> Development</div>
-            </div>
-          </div>
-          <div id="workCard" className="" style={{ position: 'relative', overflow: 'hidden' }}>
-            <Image src="/images/Group 28.png" alt="" width="315" height="365" />
-            <div id="workCardOverlay" className="absolute top-[98%] left-0 w-full h-full bg-[#00261Cbb] flex flex-col items-center justify-center duration-500 ease-in-out">
-              <div><Image src="/images/Blue-chip logo 2.png" alt="" width="107" height="123px" /></div>
-              <div className="font-[Arial] font-black text-2xl text-center mt-5">
-                <div>Full Web</div> Development</div>
-            </div>
-          </div>
-          <div id="workCard" className="" style={{ position: 'relative', overflow: 'hidden' }}>
-            <Image src="/images/Group 26.png" alt="" width="315" height="365" />
-            <div id="workCardOverlay" className="absolute top-[98%] left-0 w-full h-full bg-[#00261Cbb] flex flex-col items-center justify-center duration-500 ease-in-out">
-              <div><Image src="/images/Blue-chip logo 2.png" alt="" width="107" height="123px" /></div>
-              <div className="font-[Arial] font-black text-2xl text-center mt-5">
-                <div>Full Web</div> Development</div>
-            </div>
-          </div>
+          ))}
         </div>
 
         <div className="flex items-center justify-center gap-5 mt-10">
           <div className="hover:bg-transparent"
             style={{ padding: '5px 15px', borderRadius: 1000, background: 'var(--main-color)', color: 'black' }}>
-            Hire me</div>
-          <BsGithub size="30px" />
+            <Link href="/?modal=contact" as={`${router.pathname}/contact`}><a>Hire me</a></Link></div>
+          <Link href="https://github.com/innocentdavid"><a target="_blank"><BsGithub size="30px" /></a></Link>
         </div>
       </section>
 
@@ -131,56 +142,66 @@ export default function Home() {
           <Image src="/images/Icon zocial-cloudapp.png" alt="" width="70px" height="70px" title="AWS" />
           <Image src="/images/web3.png" alt="" width="70px" height="50px" title="web3" />
         </div>
+
+        <div className="flex items-center justify-center gap-5 mt-10">
+          <div className="hover:bg-transparent"
+            style={{ padding: '5px 15px', borderRadius: 1000, background: 'var(--main-color)', color: 'black' }}>
+            <Link href="/?modal=contact" as={`${router.pathname}/contact`}><a>Hire me</a></Link></div>
+          <Link href="https://github.com/innocentdavid"><a target="_blank"><BsGithub size="30px" /></a></Link>
+        </div>
       </section>
 
-      <section className="grid place-items-center text-center m-auto mt-20 px-8 md:px-32">
+      <section className="grid place-items-center text-center m-auto mt-20 px-8 md:px-2 lg:px-32">
         <h1 className="mb-10" style={{ fontFamily: 'Cooper', fontSize: 45, fontWeight: 900 }}>Services</h1>
 
         <div className="flex justify-center items-center flex-wrap md:flex-nowrap text-center">
-          <div className="border px-5 py-3 flex flex-col justify-center">
+          <div className="border px-5 md:px-0 lg:px-5 py-3 flex flex-col justify-center">
             <div><Image src="/images/Icon awesome-pencil-ruler.png" alt="" width="50" height="50" /></div>
             <div className="mb-5 font-[Roboto] font-bold text-2xl text-white">Design</div>
             <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual</p>
 
-            <fieldset class="border-t border-slate-300 mt-10 mb-2 font-[Roboto] font-semibold text-xl text-white">
+            <fieldset class="border-t border-slate-300 mt-10 mb-2 font-[Roboto] font-semibold text-xl">
               <legend class="mx-auto px-4">Tools</legend>
             </fieldset>
-
-            <div className="">{`Pen & Paper`}</div>
-            <div className="">Adobe XD</div>
-            <div className="">Figma</div>
-            <div className="">Webflow</div>
-            <div className="">Scratch</div>
+            <div className="text-base md:text-sm lg:text-base">
+              <div>{`Pen & Paper`}</div>
+              <div>Adobe XD</div>
+              <div>Figma</div>
+              <div>Webflow</div>
+              <div>Scratch</div>
+            </div>
           </div>
-          <div className="border px-5 py-3 flex flex-col justify-center">
+          <div className="border px-5 md:px-0 lg:px-5 py-3 flex flex-col justify-center">
             <div><Image src="/images/Icon awesome-code.png" alt="" width="50" height="50" /></div>
             <div className="mb-5 font-[Roboto] font-bold text-2xl text-white">Front-end</div>
             <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual</p>
 
-            <fieldset class="border-t border-slate-300 mt-10 mb-2 font-[Roboto] font-semibold text-xl text-white">
+            <fieldset class="border-t border-slate-300 mt-10 mb-2 font-[Roboto] font-semibold text-xl">
               <legend class="mx-auto px-4">Tools</legend>
             </fieldset>
-
-            <div className="">WordPress</div>
-            <div className="">HTML</div>
-            <div className="">CSS</div>
-            <div className="">JavaScript</div>
-            <div className="">React, NextJs, Veu, RedWood... etc</div>
+            <div className="text-base md:text-sm lg:text-base">
+              <div>WordPress</div>
+              <div>HTML</div>
+              <div>CSS</div>
+              <div>JavaScript</div>
+              <div>React, NextJs, Veu, RedWood... etc</div>
+            </div>
           </div>
-          <div className="border px-5 py-3 flex flex-col justify-center">
+          <div className="border px-5 md:px-0 lg:px-5 py-3 flex flex-col justify-center">
             <div><Image src="/images/Back-end icon.png" alt="" width="50" height="50" /></div>
             <div className="mb-5 font-[Roboto] font-bold text-2xl text-white">Back-end</div>
             <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual</p>
 
-            <fieldset class="border-t border-slate-300 mt-10 mb-2 font-[Roboto] font-semibold text-xl text-white">
+            <fieldset class="border-t border-slate-300 mt-10 mb-2 font-[Roboto] font-semibold text-xl">
               <legend class="mx-auto px-4">Tools</legend>
             </fieldset>
-
-            <div className="">Python</div>
-            <div className="">PHP</div>
-            <div className="">Node Js</div>
-            <div className="">Dj, Flask, Laravel, Firebase, Sanity, etc.</div>
-            <div className="">MongoDB, MySQL, RestAPI… etc</div>
+            <div className="text-base md:text-sm lg:text-base">
+              <div>Python</div>
+              <div>PHP</div>
+              <div>Node Js</div>
+              <div>Dj, Flask, Laravel, Firebase, Sanity, etc.</div>
+              <div>MongoDB, MySQL, RestAPI… etc</div>
+            </div>
           </div>
         </div>
       </section>
@@ -206,15 +227,10 @@ export default function Home() {
 
       <footer className="mt-28 pb-10 flex flex-col md:flex-row justify-center items-center gap-5 md:gap-20 lg:gap-32">
         <div className="flex flex-col-reverse md:flex-row items-center gap-10">
-          <div style={{ padding: '10px 30px', background: 'var(--main-color)', color: 'black' }}>Contact me</div>
-          <ul className="text-base flex gap-8" style={{ fontFamily: 'Noto Sans', fontWeight: '500' }}>
-            <li className="active">Portfolio</li>
-            <li>About</li>
-            <li>Contact</li>
-          </ul>
+          <div style={{ padding: '10px 30px', background: 'var(--main-color)', color: 'black' }}><Link href="/?modal=contact" as={`${router.pathname}/contact`}><a>Contact</a></Link></div>
         </div>
         <div className="flex gap-10"><FiFacebook /> <FiTwitter /> <FiSend /></div>
       </footer>
     </div>
-  )
+  </>)
 }

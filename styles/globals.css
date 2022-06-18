@@ -29,6 +29,10 @@
   --header: #eaeaea;
 } */
 
+html, body {
+  scroll-behavior: smooth;
+}
+
 .default-btn {
   background: var(--main-color);
   color: white;

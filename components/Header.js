@@ -5,9 +5,13 @@ import { FiFacebook, FiSend, FiTwitter } from 'react-icons/fi';
 import { MdDarkMode } from 'react-icons/md';
 import { RiWhatsappFill } from 'react-icons/ri';
 import { FaUserTie } from 'react-icons/fa';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 export default function Header() {
   const { theme, setTheme } = useTheme()
+  const router = useRouter()
+  const currentPage = router.pathname
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,8 +48,8 @@ export default function Header() {
       
       <ul className="hidden text-base md:flex gap-8" style={{ fontFamily: 'Noto Sans', fontWeight: '500' }}>
         <li className="text-[#34ffc8]">Portfolio</li>
-        <li>About</li>
-        <li>Contact</li>
+        <li><Link href="#about"><a>About</a></Link></li>
+        <li><Link href="/?modal=contact" as={`${router.pathname}/contact`}><a>Contact</a></Link></li>
       </ul>
       <div className="hidden md:flex gap-10">
         <FiFacebook />
@@ -59,7 +63,7 @@ export default function Header() {
         <MdDarkMode size="1.7em" />
       </div>
       <div className="mt-5">
-        <RiWhatsappFill size="1.7em" />
+      <Link href="https://wa.me/2348112659304?text=Hi cent, I'm mesmerized by your skills. My name is "><a target="_blank"><RiWhatsappFill size="1.7em" /></a></Link>
       </div>
     </div>
   </>
