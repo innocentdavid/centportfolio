@@ -1,28 +1,36 @@
 import Image from 'next/image';
-import Header from "../components/Header";
+import Link from 'next/link';
 import Modal from 'react-modal'
+
+import Header from "../components/Header";
+import ContactUsModal from "../components/ContactUsModal";
 
 import { FiFacebook, FiTwitter, FiSend } from 'react-icons/fi';
 import { BsGithub } from 'react-icons/bs';
+import { MdOutlineMailOutline } from 'react-icons/md';
+
 import { useState } from 'react';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 export default function Home() {
   const router = useRouter()
   const currentPage = router.pathname
 
+  const user = {
+    name: 'Paul Innocent',
+    facebookUrl: 'https://web.facebook.com/david.godwin.1044',
+    twitterUrl: 'https://twitter.com/paulinnocent04',
+    githubUrl: 'https://github.com/innocentdavid',
+    email: 'innocentpaul2918@gmail.com'
+  }
+
   const [projects, setProjects] = useState([
-    { description: 'A dynamic and innovative Transparent and Logistic Company with a strategic specialization, providing solution.', role: 'Full development', imgUrl: '/images/Group 26.png', logoUrl: '/images/Blue-chip logo 2.png' },
-    { description: 'A dynamic and innovative Transparent and Logistic Company with a strategic specialization, providing solution.', role: 'Full development', imgUrl: '/images/Group 27.png', logoUrl: '/images/Blue-chip logo 2.png' },
-    { description: 'A dynamic and innovative Transparent and Logistic Company with a strategic specialization, providing solution.', role: 'Full development', imgUrl: '/images/Group 28.png', logoUrl: '/images/Blue-chip logo 2.png' },
-    { description: 'A dynamic and innovative Transparent and Logistic Company with a strategic specialization, providing solution.', role: 'Full development', imgUrl: '/images/Group 29.png', logoUrl: '/images/Blue-chip logo 2.png' },
-    { description: 'A dynamic and innovative Transparent and Logistic Company with a strategic specialization, providing solution.', role: 'Full development', imgUrl: '/images/Group 30.png', logoUrl: '/images/Blue-chip logo 2.png' },
-    { description: 'A dynamic and innovative Transparent and Logistic Company with a strategic specialization, providing solution.', role: 'Full development', imgUrl: '/images/Group 31.png', logoUrl: '/images/Blue-chip logo 2.png' },
+    { description: 'A dynamic and innovative Transparent and Logistic Company with a strategic specialization, providing solution.', role: 'Full development', bgImgUrl: '/images/Group 27.png', logoUrl: '/images/Blue-chip logo 2.png' },
+    { description: 'Mystudentkit is a student educational resource website that provides foundational academic information, materials & digital skills acquisition to students of all levels', role: 'Back-end developer', bgImgUrl: '/images/msk-bg-img.png', logoUrl: '/images/mystudentkit-logo.png' },
   ]);
 
   return (<>
-  <Modal
+    <Modal
       isOpen={router.query.modal === 'contact'}
       onRequestClose={() => router.push(`${currentPage}`)}
       style={{
@@ -42,8 +50,9 @@ export default function Home() {
           right: '50px',
           bottom: '50px',
           border: '1px solid #ccc',
-          background: '#fff',
-          color: '#000',
+          borderRadius: '30px',
+          background: '#212121',
+          color: '#fff',
           overflow: 'auto',
           WebkitOverflowScrolling: 'touch',
           borderRadius: '4px',
@@ -53,11 +62,11 @@ export default function Home() {
         }
       }}
     >
-      INNOCENTPAUL2918@GMAIL.COM
+      <ContactUsModal user={user} />
     </Modal>
 
     <div className="max-w-[1400px] select-none">
-      <Header />
+      <Header user={user} />
       <section className="flex justify-around items-center pt-24 md:pt-32">
         <div className="hidden md:block">
           <Image src="/images/4848341.png" alt='' width="349px" height="333px" />
@@ -73,9 +82,9 @@ export default function Home() {
             <div>WordPress Expert</div>
           </div>
           <p style={{ fontSize: 18, marginTop: 10 }}>Astute Full Stack Software Engineer with over 3 years of experience in Web development.</p>
-          <div className="flex gap-8 md:gap-12 mt-3">
-            <div className="py-2 px-7 rounded-full text-black" style={{ background: 'var(--main-color)' }}><Link href="/?modal=contact" as={`${router.pathname}/contact`}><a>Hire me</a></Link></div>
-            <div className="py-2 px-7 rounded-full" style={{ border: '1px solid var(--main-color)' }}>My Resume</div>
+          <div className="flex gap-8 md:gap-12 mt-10">
+            <div className="hover:animate-bounce"><Link href="/?modal=contact"><a className="py-2 px-7 rounded-full text-black" style={{ background: 'var(--main-color)' }}>Hire me</a></Link></div>
+            <div className="hover:animate-bounce"><Link href="https://docs.google.com/document/d/1AkwYp-FLBdWGZ0mFu8dLDa4QRtRu8t5i9XmSk6c-Qrk/edit?usp=sharing"><a className="py-2 px-7 rounded-full" style={{ border: '1px solid var(--main-color)' }} target="_blank" download>My Resume</a></Link></div>
           </div>
         </div>
       </section>
@@ -83,13 +92,17 @@ export default function Home() {
       <section id="about" className="grid place-items-center text-center m-auto mt-28 px-8 md:px-32">
         <h1 className="mb-5" style={{ fontFamily: 'Cooper', fontSize: 45, fontWeight: 900 }}>About me</h1>
 
-        <p style={{ fontFamily: 'Noto Sans', fontSize: 20 }}>I'm Paul Innocent. Astute Full Stack Software Engineer with over 3 years of experience in Web development. offers expansive experience, supporting test case development and verification testing. Works collaboratively to design and build user interfaces. Driven and ambitious technology professional with high-level Software proficiency.</p>
+        <p style={{ fontFamily: 'Noto Sans', fontSize: 20 }}>I'm Paul Innocent. Astute Full Stack Software Engineer with over 3 years of experience in Web development. I offer extensive experience in supporting test case development and verification testing. works collaboratively to design and build user interfaces. I am a driven and ambitious technology professional with high-level software proficiency.</p>
 
         <div className='mt-10 mb-10'><Image src="/images/IMG_20220329_202933_246.png" alt="" width="184px" height="184px" /></div>
 
         <div className="flex flex-col md:flex-row items-center gap-10">
-          <div style={{ padding: '10px 30px', background: 'var(--main-color)', color: 'black' }}><Link href="/?modal=contact" as={`${router.pathname}/contact`}><a>Contact</a></Link></div>
-          <div className="flex gap-10"><FiFacebook /> <FiTwitter /> <FiSend /></div>
+          <div style={{ padding: '10px 30px', background: 'var(--main-color)', color: 'black' }}><Link href="/?modal=contact"><a className="hover:animate-bounce">Contact</a></Link></div>
+          <div className="flex gap-10">
+            <Link href={user.facebookUrl}><a target="_blank"><FiFacebook /></a></Link>
+            <Link href={user.twitterUrl}><a target="_blank"><FiTwitter /></a></Link>
+            <Link href={`mailto:${user.email}`}><a target="_blank"><FiSend /></a></Link>
+          </div>
         </div>
       </section>
 
@@ -99,7 +112,7 @@ export default function Home() {
         <div className="flex flex-wrap gap-16 justify-center">
           {projects?.map((project, index) => (
             <div key={index} id="workCard" className="" style={{ position: 'relative', overflow: 'hidden' }}>
-              <Image src={project?.imgUrl} alt="" width="315" height="365" />
+              <Image src={project?.bgImgUrl} alt="" width="315" height="365" />
               <div id="workCardOverlay" className="absolute top-[98%] left-0 w-full h-full bg-[#00261Cbb] flex flex-col items-center justify-center duration-500 ease-in-out">
                 <div><Image src={project?.logoUrl} alt="" width="107" height="123px" /></div>
                 <div className="text-center mt-5 px-3">
@@ -113,8 +126,8 @@ export default function Home() {
         <div className="flex items-center justify-center gap-5 mt-10">
           <div className="hover:bg-transparent"
             style={{ padding: '5px 15px', borderRadius: 1000, background: 'var(--main-color)', color: 'black' }}>
-            <Link href="/?modal=contact" as={`${router.pathname}/contact`}><a>Hire me</a></Link></div>
-          <Link href="https://github.com/innocentdavid"><a target="_blank"><BsGithub size="30px" /></a></Link>
+            <Link href="/?modal=contact"><a className="hover:animate-bounce">Hire me</a></Link></div>
+          <Link href={user.githubUrl}><a target="_blank"><BsGithub size="30px" /></a></Link>
         </div>
       </section>
 
@@ -146,8 +159,8 @@ export default function Home() {
         <div className="flex items-center justify-center gap-5 mt-10">
           <div className="hover:bg-transparent"
             style={{ padding: '5px 15px', borderRadius: 1000, background: 'var(--main-color)', color: 'black' }}>
-            <Link href="/?modal=contact" as={`${router.pathname}/contact`}><a>Hire me</a></Link></div>
-          <Link href="https://github.com/innocentdavid"><a target="_blank"><BsGithub size="30px" /></a></Link>
+            <Link href="/?modal=contact"><a className="hover:animate-bounce">Hire me</a></Link></div>
+          <Link href={user.githubUrl}><a target="_blank"><BsGithub size="30px" /></a></Link>
         </div>
       </section>
 
@@ -211,14 +224,15 @@ export default function Home() {
 
         <Image src="/images/Icon awesome-quote-left.png" alt="" width="50px" height="50px" />
 
-        <p className="mt-4 px-[15%]">Astute Full Stack Software Engineer with over 3 years of experience in Web development. offers expansive experience, supporting test case development and verification testing. Works collaboratively to design and build user</p>
+        <p className="mt-4 px-[15%]">Without doubt one of the most talented programmers out there. I always go back to 'cent when I'm out of my depth and he's never failed to deliver what I ask for. He's Smart, trustworthy and professional. You won't be disappointed.</p>
 
         <div className="mt-10 flex justify-between items-center gap-20 md:gap-20 lg:gap-36">
           {/* <div className="text-4xl">{`<`}</div> */}
           <div className="flex flex-col md:flex-row justify-center gap-5">
             <div><Image src="/images/M.B Mainsara.png" alt="" width="50px" height="50px" /></div>
             <div className="text-center">
-              <div className="font-bold">M.B Mainasara</div> The CEO Blue chip universal services
+              <div className="font-bold flex items-center justify-center gap-4">Bamshak Ibrahim <Link href={`mailto:bamshakibrahim@gmail.com`}><a target="_blank"><MdOutlineMailOutline /></a></Link></div> 
+              <div>Blue chip universal services</div>
             </div>
           </div>
           {/* <div className="font-black text-4xl">{`>`}</div> */}
@@ -227,9 +241,13 @@ export default function Home() {
 
       <footer className="mt-28 pb-10 flex flex-col md:flex-row justify-center items-center gap-5 md:gap-20 lg:gap-32">
         <div className="flex flex-col-reverse md:flex-row items-center gap-10">
-          <div style={{ padding: '10px 30px', background: 'var(--main-color)', color: 'black' }}><Link href="/?modal=contact" as={`${router.pathname}/contact`}><a>Contact</a></Link></div>
+          <div style={{ padding: '10px 30px', background: 'var(--main-color)', color: 'black' }}><Link href="/?modal=contact"><a className="hover:animate-bounce">Contact</a></Link></div>
         </div>
-        <div className="flex gap-10"><FiFacebook /> <FiTwitter /> <FiSend /></div>
+        <div className="flex gap-10">
+          <Link href={user.facebookUrl}><a target="_blank"><FiFacebook /></a></Link>
+          <Link href={user.twitterUrl}><a target="_blank"><FiTwitter /></a></Link>
+          <Link href={`mailto:${user.email}`}><a target="_blank"><FiSend /></a></Link>
+        </div>
       </footer>
     </div>
   </>)

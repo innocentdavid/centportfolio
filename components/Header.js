@@ -8,7 +8,7 @@ import { FaUserTie } from 'react-icons/fa';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-export default function Header() {
+export default function Header({ user }) {
   const { theme, setTheme } = useTheme()
   const router = useRouter()
   const currentPage = router.pathname
@@ -52,10 +52,10 @@ export default function Header() {
         <li><Link href="/?modal=contact" as={`${router.pathname}/contact`}><a>Contact</a></Link></li>
       </ul>
       <div className="hidden md:flex gap-10">
-        <FiFacebook />
-        <FiTwitter />
-        <FiSend />
-      </div>
+          <Link href={user.facebookUrl}><a target="_blank"><FiFacebook /></a></Link>
+          <Link href={user.twitterUrl}><a target="_blank"><FiTwitter /></a></Link>
+          <Link href={`mailto:${user.email}`}><a target="_blank"><FiSend /></a></Link>
+        </div>
     </div>
 
     <div className="fixed bottom-10 right-10 z-50">
@@ -63,7 +63,7 @@ export default function Header() {
         <MdDarkMode size="1.7em" />
       </div>
       <div className="mt-5">
-      <Link href="https://wa.me/2348112659304?text=Hi cent, I'm mesmerized by your skills. My name is "><a target="_blank"><RiWhatsappFill size="1.7em" /></a></Link>
+      <Link href="https://wa.me/2348112659304?text=Hi cent, I'm mesmerized by your skills. My name is "><a className="text-main" target="_blank"><RiWhatsappFill size="1.7em" /></a></Link>
       </div>
     </div>
   </>

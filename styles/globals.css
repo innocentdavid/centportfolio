@@ -9,11 +9,12 @@
 .root,
 #root,
 #docs-root {
-  --primary: #EB004E;
+  --primary: #34ffc8;
   --secondary: #8cb1e2;
   --accent: #718096;
-  --background: #fff;
-  --main: #EB004E;
+  --background: #212121;
+  /* --background: #121212; */
+  --main: #34ffc8;
   --header: #2d3748;
 }
 
