@@ -136,7 +136,7 @@ export default function Home() {
       <section className="grid place-items-center text-center m-auto mt-28 px-8 md:px-32">
         <h1 className="mb-5" style={{ fontFamily: 'Cooper', fontSize: 45, fontWeight: 900 }}>My Skillsets</h1>
 
-        <p style={{ fontFamily: 'Noto Sans', fontSize: 20 }}>I started learn programming at a very young age so I learn a lot of thing, did a lot of practicals. I actually focused on both frontend and backend but I also have wide knowledge on programming.</p>
+        <p style={{ fontFamily: 'Noto Sans', fontSize: 20 }}>I began learning programming at a very young age, so I learned a lot and practised a lot. I genuinely concentrated on both frontend and backend, and I also have extensive programming experience.</p>
 
         <div className="flex flex-wrap justify-center gap-10 mt-16">
           <Image src="/images/Icon awesome-css3-alt.png" alt="" width="70px" height="70px" title="CSS3" />
