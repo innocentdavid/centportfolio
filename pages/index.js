@@ -24,10 +24,12 @@ export default function Home() {
     email: 'innocentpaul2918@gmail.com'
   }
 
-  const [projects, setProjects] = useState([
-    { description: 'A dynamic and innovative Transparent and Logistic Company with a strategic specialization, providing solution.', role: 'Full development', bgImgUrl: '/images/Group 27.png', logoUrl: '/images/Blue-chip logo 2.png' },
-    { description: 'Mystudentkit is a student educational resource website that provides foundational academic information, materials & digital skills acquisition to students of all levels', role: 'Back-end developer', bgImgUrl: '/images/msk-bg-img.png', logoUrl: '/images/mystudentkit-logo.png' },
-  ]);
+  const projects = [
+    { description: 'A dynamic and innovative Transparent and Logistic Company with a strategic specialization, providing solution.', role: 'Full development', bgImgUrl: '/images/Group 27.png', logoUrl: '/images/Blue-chip logo 2.png', link: 'https://bluichip.com.ng' },
+    { description: 'Mystudentkit is a student educational resource website that provides foundational academic information, materials & digital skills acquisition to students of all levels', role: 'Back-end developer', bgImgUrl: '/images/msk-bg-img.png', logoUrl: '/images/mystudentkit-logo.png', link: 'https://mystudentkit.com' },
+    { description: "Mode Media Digital Solution Company Providing a near 360 digital solutions to our clients with our diverse products and services.", role: 'Full web developement', bgImgUrl: '/images/modemedia-bg-img.png', logoUrl: '/images/modemedia-logo.png', link: 'https://modemedia.ng' },
+    { description: "A 3-star hotel in Nigeria. With first-rate customer service and on-call security, we provide a venue fit for royalty and comfort.", role: 'Full web developement', bgImgUrl: '/images/Royal-hotel-bg-img.png', logoUrl: '/images/royalLogo.png', link: 'https://centroyalhotel.herokuapp.com' },
+  ];
 
   return (<>
     <Modal
@@ -114,7 +116,7 @@ export default function Home() {
             <div key={index} id="workCard" className="" style={{ position: 'relative', overflow: 'hidden' }}>
               <Image src={project?.bgImgUrl} alt="" width="315" height="365" />
               <div id="workCardOverlay" className="absolute top-[98%] left-0 w-full h-full bg-[#00261Cbb] flex flex-col items-center justify-center duration-500 ease-in-out">
-                <div><Image src={project?.logoUrl} alt="" width="107" height="123px" /></div>
+                <div><Link href={project.link}><a><Image src={project?.logoUrl} alt="" width="107" height="123px" /></a></Link></div>
                 <div className="text-center mt-5 px-3">
                   <p className="text-sm">{project?.description}</p>
                   <div className="font-[Arial] font-black text-base mt-3"><span style={{ color: 'var(--main-color)' }}>Role: </span>{project.role}</div></div>
