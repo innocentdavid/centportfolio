@@ -59,7 +59,7 @@ export default function Header({ user }) {
         <Link href={`mailto:${user.email}`}><a className="hover:text-[#34ffc8]" target="_blank"><FiSend /></a></Link>
       </div>
 
-      {showMenu && <div className="lg:hidden absolute top-[80px] left-0 p-4 w-full min-h-[200px] bg-black dark:bg-[#949494]">
+      {showMenu && <div className="lg:hidden absolute top-[80px] left-0 p-4 w-full min-h-[200px] bg-black">
         <div className="flex flex-col">
           <ul className="text-base flex flex-col gap-4" style={{ fontFamily: 'Noto Sans', fontWeight: '500' }}>
             <li className="text-[#34ffc8] font-black">Portfolio</li>
