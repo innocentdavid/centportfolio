@@ -25,10 +25,11 @@ export default function Home() {
   }
 
   const projects = [
-    { description: 'A dynamic and innovative Transparent and Logistic Company with a strategic specialization, providing solution.', role: 'Full development', bgImgUrl: '/images/Group 27.png', logoUrl: '/images/Blue-chip logo 2.png', link: 'https://bluichip.com.ng' },
-    { description: 'Mystudentkit is a student educational resource website that provides foundational academic information, materials & digital skills acquisition to students of all levels', role: 'Back-end developer', bgImgUrl: '/images/msk-bg-img.png', logoUrl: '/images/mystudentkit-logo.png', link: 'https://mystudentkit.com' },
-    { description: "Mode Media Digital Solution Company Providing a near 360 digital solutions to our clients with our diverse products and services.", role: 'Full web developement', bgImgUrl: '/images/modemedia-bg-img.png', logoUrl: '/images/modemedia-logo.png', link: 'https://modemedia.ng' },
-    { description: "A 3-star hotel in Nigeria. With first-rate customer service and on-call security, we provide a venue fit for royalty and comfort.", role: 'Full web developement', bgImgUrl: '/images/Royal-hotel-bg-img.png', logoUrl: '/images/royalLogo.png', link: 'https://centroyalhotel.herokuapp.com' },
+    { technologies: 'Adobe XD (Design) + HTML + SCSS + Bootstrap + JavaScript', role: 'Full development', bgImgUrl: '/images/Group 27.png', logoUrl: '/images/Blue-chip logo 2.png', link: 'https://bluichip.com.ng' },
+    { technologies: 'Laravel + MailChimp + SendInBlue + PayStack', role: 'Back-end developer', bgImgUrl: '/images/msk-bg-img.png', logoUrl: '/images/mystudentkit-logo.png', link: 'https://mystudentkit.com' },
+    { technologies: "WordPress + Adobe XD (Design).", role: 'Full web developement', bgImgUrl: '/images/modemedia-bg-img.png', logoUrl: '/images/modemedia-logo.png', link: 'https://modemedia.ng' },
+    { technologies: "HTML + CSS + Bootstrap + JavaScript + Node Js", role: 'Back-end developer', bgImgUrl: '/images/PickupBeta-bg-img.png', logoUrl: '/images/pick.png', link: 'https://pickupbeta.com' },
+    { technologies: "Python + Django + Jinja2 + SCSS + JavaScript + SQL + db.sqlite3 + Dj Database", role: 'Full web developement', bgImgUrl: '/images/Royal-hotel-bg-img.png', logoUrl: '/images/royalLogo.png', link: 'https://centroyalhotel.herokuapp.com' },
   ];
 
   return (<>
@@ -118,7 +119,7 @@ export default function Home() {
               <div id="workCardOverlay" className="absolute top-[98%] left-0 w-full h-full bg-[#00261Cbb] flex flex-col items-center justify-center duration-500 ease-in-out">
                 <div><Link href={project.link}><a><Image src={project?.logoUrl} alt="" width="107" height="123px" /></a></Link></div>
                 <div className="text-center mt-5 px-3">
-                  <p className="text-sm">{project?.description}</p>
+                  <p className="text-sm">{project?.technologies}</p>
                   <div className="font-[Arial] font-black text-base mt-3"><span style={{ color: 'var(--main-color)' }}>Role: </span>{project.role}</div></div>
               </div>
             </div>
@@ -129,7 +130,7 @@ export default function Home() {
           <div className="hover:bg-transparent"
             style={{ padding: '5px 15px', borderRadius: 1000, background: 'var(--main-color)', color: 'black' }}>
             <Link href="/?modal=contact"><a className="hover:animate-bounce">Hire me</a></Link></div>
-          <Link href={user.githubUrl}><a target="_blank"><BsGithub size="30px" /></a></Link>
+          <Link href={user.githubUrl}><a className="flex gap-3 items-center" target="_blank">see more: <BsGithub size="30px" /></a></Link>
         </div>
       </section>
 
