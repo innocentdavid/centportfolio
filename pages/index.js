@@ -70,7 +70,7 @@ export default function Home() {
 
     <div className="max-w-[1400px] select-none">
       <Header user={user} />
-      <section className="flex justify-around items-center pt-24 md:pt-32">
+      <section id="hero" className="flex justify-around items-center pt-24 md:pt-32">
         <div className="hidden md:block">
           <Image src="/images/4848341.png" alt='' width="349px" height="333px" />
         </div>
@@ -109,15 +109,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mt-20">
+      <section id="recentWork" className="mt-20">
         <div className="text-center text-5xl font-black font-[Cooper] mb-10">My Recent Works</div>
 
-        <div className="flex flex-wrap gap-16 justify-center">
+        <div className="flex flex-wrap gap-16 justify-center text-white">
           {projects?.map((project, index) => (
             <div key={index} id="workCard" className="" style={{ position: 'relative', overflow: 'hidden' }}>
               <Image src={project?.bgImgUrl} alt="" width="315" height="365" />
-              <div id="workCardOverlay" className="absolute top-[98%] left-0 w-full h-full bg-[#00261Cbb] flex flex-col items-center justify-center duration-500 ease-in-out">
-                <div><Link href={project.link}><a><Image src={project?.logoUrl} alt="" width="107" height="123px" /></a></Link></div>
+              <div id="workCardOverlay" className="absolute top-0 lg:top-[98%] left-0 w-full h-full bg-[#00261Cbb] flex flex-col items-center justify-center duration-500 ease-in-out">
+                <div><Link href={project.link}><a><Image src={project?.logoUrl} alt="" width="107" height="90px" /></a></Link></div>
                 <div className="text-center mt-5 px-3">
                   <p className="text-sm">{project?.technologies}</p>
                   <div className="font-[Arial] font-black text-base mt-3"><span style={{ color: 'var(--main-color)' }}>Role: </span>{project.role}</div></div>
@@ -134,7 +134,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="grid place-items-center text-center m-auto mt-28 px-8 md:px-32">
+      <section id="skillsets" className="grid place-items-center text-center m-auto mt-28 px-8 md:px-32">
         <h1 className="mb-5" style={{ fontFamily: 'Cooper', fontSize: 45, fontWeight: 900 }}>My Skillsets</h1>
 
         <p style={{ fontFamily: 'Noto Sans', fontSize: 20 }}>I began learning programming at a very young age, so I learned a lot and practised a lot. I genuinely concentrated on both frontend and backend, and I also have extensive programming experience.</p>
@@ -167,7 +167,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="grid place-items-center text-center m-auto mt-20 px-8 md:px-2 lg:px-32">
+      <section id="services" className="grid place-items-center text-center m-auto mt-20 px-8 md:px-2 lg:px-32">
         <h1 className="mb-10" style={{ fontFamily: 'Cooper', fontSize: 45, fontWeight: 900 }}>Services</h1>
 
         <div className="flex justify-center items-center flex-wrap md:flex-nowrap text-center">
@@ -222,7 +222,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="grid place-items-center text-center mt-20 px-8 md:px-32">
+      <section id="testimonies" className="grid place-items-center text-center mt-20 px-8 md:px-32">
         <h1 className="mb-10" style={{ fontFamily: 'Cooper', fontSize: 45, fontWeight: 900 }}>Testimonies</h1>
 
         <Image src="/images/Icon awesome-quote-left.png" alt="" width="50px" height="50px" />

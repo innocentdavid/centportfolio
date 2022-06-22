@@ -18,18 +18,6 @@
   --header: #2d3748;
 }
 
-/* .theme-light {
-  --background: #fff;
-  --main: #0d0106;
-  --header: #2d3748;
-}
-
-.theme-dark {
-  --background: #0e141b;
-  --main: #ffffff;
-  --header: #eaeaea;
-} */
-
 html, body {
   scroll-behavior: smooth;
 }
