@@ -68,7 +68,7 @@ export default function Home() {
       <ContactUsModal user={user} />
     </Modal>
 
-    <div className="max-w-[1400px] select-none">
+    <div className="max-w-[1400px]">
       <Header user={user} />
       <section id="hero" className="flex justify-around items-center pt-24 md:pt-32">
         <div className="hidden md:block">
