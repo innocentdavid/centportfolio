@@ -48,10 +48,10 @@ export default function Home() {
         },
         content: {
           position: 'absolute',
-          top: '50px',
-          left: '50px',
-          right: '50px',
-          bottom: '50px',
+          top: '20px',
+          left: '20px',
+          right: '20px',
+          bottom: '20px',
           border: '1px solid #ccc',
           borderRadius: '30px',
           background: '#212121',
@@ -68,7 +68,7 @@ export default function Home() {
       <ContactUsModal user={user} />
     </Modal>
 
-    <div className="max-w-[1400px]">
+    <div className="max-w-[1600px]">
       <Header user={user} />
       <section id="hero" className="flex justify-around items-center pt-24 md:pt-32">
         <div className="hidden md:block">
@@ -95,7 +95,12 @@ export default function Home() {
       <section id="about" className="grid place-items-center text-center m-auto mt-28 px-8 md:px-32">
         <h1 className="mb-5" style={{ fontFamily: 'Cooper', fontSize: 45, fontWeight: 900 }}>About me</h1>
 
-        <p style={{ fontFamily: 'Noto Sans', fontSize: 20 }}>I'm Paul Innocent. Astute Full Stack Software Engineer with over 3 years of experience in Web development. I offer extensive experience in supporting test case development and verification testing. works collaboratively to design and build user interfaces. I am a driven and ambitious technology professional with high-level software proficiency.</p>
+        <p style={{ fontFamily: 'Noto Sans', fontSize: 20 }}>I'm a full stack web developer with over 5years of experience and well trained with live experience in the following:
+          HTML, CSS, Js, React Js, Next Js, Firebase integration, Python(Django), php, Laravel.
+
+          I deliver quickly. I have worked with a lot of clients and companies and they always like my Job. I'm certified from many online web programming Platforms and among them is the HARVARD Programming with Python and JavaScript CS50W.
+
+          I have passion for programming and I'm full of ideas and ready to help solve problems and build great platforms.</p>
 
         <div className='mt-10 mb-10'><Image src="/images/IMG_20220329_202933_246.png" alt="" width="184px" height="184px" /></div>
 
@@ -113,6 +118,7 @@ export default function Home() {
         <div className="text-center text-5xl font-black font-[Cooper] mb-10">My Recent Works</div>
 
         <div className="flex flex-wrap gap-16 justify-center text-white">
+          
           {projects?.map((project, index) => (
             <div key={index} id="workCard" className="" style={{ position: 'relative', overflow: 'hidden' }}>
               <Image src={project?.bgImgUrl} alt="" width="315" height="365" />
@@ -124,6 +130,7 @@ export default function Home() {
               </div>
             </div>
           ))}
+          
         </div>
 
         <div className="flex items-center justify-center gap-5 mt-10">
@@ -170,15 +177,16 @@ export default function Home() {
       <section id="services" className="grid place-items-center text-center m-auto mt-20 px-8 md:px-2 lg:px-32">
         <h1 className="mb-10" style={{ fontFamily: 'Cooper', fontSize: 45, fontWeight: 900 }}>Services</h1>
 
-        <div className="flex justify-center items-center flex-wrap md:flex-nowrap text-center">
-          <div className="border px-5 md:px-0 lg:px-5 py-3 flex flex-col justify-center">
+        <div className="flex justify-center flex-wrap md:flex-nowrap text-center">
+          <div className="border px-5 md:px-0 lg:px-5 py-3 flex flex-col justify-center w-[400px]">
             <div><Image src="/images/Icon awesome-pencil-ruler.png" alt="" width="50" height="50" /></div>
-            <div className="mb-5 font-[Roboto] font-bold text-2xl text-white">Design</div>
-            <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual</p>
+            <div className="mb-5 font-[Roboto] font-bold text-2xl">Design</div>
+            <p>A well-designed website is critical to your success. Your company’s website is the beating heart of all of your online marketing efforts including search engine optimization.</p>
 
             <fieldset className="border-t border-slate-300 mt-10 mb-2 font-[Roboto] font-semibold text-xl">
               <legend className="mx-auto px-4">Tools</legend>
             </fieldset>
+
             <div className="text-base md:text-sm lg:text-base">
               <div>{`Pen & Paper`}</div>
               <div>Adobe XD</div>
@@ -187,10 +195,10 @@ export default function Home() {
               <div>Scratch</div>
             </div>
           </div>
-          <div className="border px-5 md:px-0 lg:px-5 py-3 flex flex-col justify-center">
+          <div className="border px-5 md:px-0 lg:px-5 py-3 flex flex-col justify-center w-[400px]">
             <div><Image src="/images/Icon awesome-code.png" alt="" width="50" height="50" /></div>
-            <div className="mb-5 font-[Roboto] font-bold text-2xl text-white">Front-end</div>
-            <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual</p>
+            <div className="mb-5 font-[Roboto] font-bold text-2xl">Front-end</div>
+            <p>I have over 5years experience designing responsive interface and creates the best possible experience for the users.</p>
 
             <fieldset className="border-t border-slate-300 mt-10 mb-2 font-[Roboto] font-semibold text-xl">
               <legend className="mx-auto px-4">Tools</legend>
@@ -203,10 +211,10 @@ export default function Home() {
               <div>React, NextJs, Veu, RedWood... etc</div>
             </div>
           </div>
-          <div className="border px-5 md:px-0 lg:px-5 py-3 flex flex-col justify-center">
+          <div className="border px-5 md:px-0 lg:px-5 py-3 flex flex-col justify-center w-[400px]">
             <div><Image src="/images/Back-end icon.png" alt="" width="50" height="50" /></div>
-            <div className="mb-5 font-[Roboto] font-bold text-2xl text-white">Back-end</div>
-            <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual</p>
+            <div className="mb-5 font-[Roboto] font-bold text-2xl">Back-end</div>
+            <p>I become the greatest at what I do thanks to my front end and back end skills. I've helped some businesses and startups develop the backends for their projects.</p>
 
             <fieldset className="border-t border-slate-300 mt-10 mb-2 font-[Roboto] font-semibold text-xl">
               <legend className="mx-auto px-4">Tools</legend>
@@ -227,14 +235,14 @@ export default function Home() {
 
         <Image src="/images/Icon awesome-quote-left.png" alt="" width="50px" height="50px" />
 
-        <p className="mt-4 px-[15%]">Without doubt one of the most talented programmers out there. I always go back to 'cent when I'm out of my depth and he's never failed to deliver what I ask for. He's Smart, trustworthy and professional. You won't be disappointed.</p>
+        <p className="mt-4 px-[15%]">Without doubt, Cent is one of the most talented programmers out there. I always go back to cent whenever I'm out of my depth and he has never failed to deliver what I ask for. He's Smart, trustworthy and professional. You won't be disappointed.</p>
 
         <div className="mt-10 flex justify-between items-center gap-20 md:gap-20 lg:gap-36">
           {/* <div className="text-4xl">{`<`}</div> */}
           <div className="flex flex-col md:flex-row justify-center gap-5">
             <div><Image src="/images/M.B Mainsara.png" alt="" width="50px" height="50px" /></div>
             <div className="text-center">
-              <div className="font-bold flex items-center justify-center gap-4">Bamshak Ibrahim <Link href={`mailto:bamshakibrahim@gmail.com`}><a target="_blank"><MdOutlineMailOutline /></a></Link></div> 
+              <div className="font-bold flex items-center justify-center gap-4">Bamshak Ibrahim <Link href={`mailto:bamshakibrahim@gmail.com`}><a target="_blank"><MdOutlineMailOutline /></a></Link></div>
               <div>Blue chip universal services</div>
             </div>
           </div>
