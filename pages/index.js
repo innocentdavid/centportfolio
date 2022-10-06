@@ -25,7 +25,7 @@ export default function Home() {
   }
 
   const projects = [
-    { technologies: 'Adobe XD (Design) + HTML + SCSS + Bootstrap + JavaScript', role: 'Full development', bgImgUrl: '/images/Group 27.png', logoUrl: '/images/Blue-chip logo 2.png', link: 'https://bluichip.com.ng' },
+    { technologies: 'Adobe XD (Design) + HTML + SCSS + Bootstrap + JavaScript', role: 'Full development', bgImgUrl: '/images/Group 27.png', logoUrl: '/images/Blue-chip logo 2.png', link: 'https://bluechip.com.ng/' },
     { technologies: 'Laravel + MailChimp + SendInBlue + PayStack', role: 'Back-end developer', bgImgUrl: '/images/msk-bg-img.png', logoUrl: '/images/mystudentkit-logo.png', link: 'https://mystudentkit.com' },
     { technologies: "WordPress + Adobe XD (Design).", role: 'Full web developement', bgImgUrl: '/images/modemedia-bg-img.png', logoUrl: '/images/modemedia-logo.png', link: 'https://modemedia.ng' },
     { technologies: "HTML + CSS + Bootstrap + JavaScript + Node Js", role: 'Back-end developer', bgImgUrl: '/images/PickupBeta-bg-img.png', logoUrl: '/images/pick.png', link: 'https://pickupbeta.com' },
@@ -176,8 +176,8 @@ export default function Home() {
             <div className="mb-5 font-[Roboto] font-bold text-2xl text-white">Design</div>
             <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual</p>
 
-            <fieldset class="border-t border-slate-300 mt-10 mb-2 font-[Roboto] font-semibold text-xl">
-              <legend class="mx-auto px-4">Tools</legend>
+            <fieldset className="border-t border-slate-300 mt-10 mb-2 font-[Roboto] font-semibold text-xl">
+              <legend className="mx-auto px-4">Tools</legend>
             </fieldset>
             <div className="text-base md:text-sm lg:text-base">
               <div>{`Pen & Paper`}</div>
@@ -192,8 +192,8 @@ export default function Home() {
             <div className="mb-5 font-[Roboto] font-bold text-2xl text-white">Front-end</div>
             <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual</p>
 
-            <fieldset class="border-t border-slate-300 mt-10 mb-2 font-[Roboto] font-semibold text-xl">
-              <legend class="mx-auto px-4">Tools</legend>
+            <fieldset className="border-t border-slate-300 mt-10 mb-2 font-[Roboto] font-semibold text-xl">
+              <legend className="mx-auto px-4">Tools</legend>
             </fieldset>
             <div className="text-base md:text-sm lg:text-base">
               <div>WordPress</div>
@@ -208,8 +208,8 @@ export default function Home() {
             <div className="mb-5 font-[Roboto] font-bold text-2xl text-white">Back-end</div>
             <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual</p>
 
-            <fieldset class="border-t border-slate-300 mt-10 mb-2 font-[Roboto] font-semibold text-xl">
-              <legend class="mx-auto px-4">Tools</legend>
+            <fieldset className="border-t border-slate-300 mt-10 mb-2 font-[Roboto] font-semibold text-xl">
+              <legend className="mx-auto px-4">Tools</legend>
             </fieldset>
             <div className="text-base md:text-sm lg:text-base">
               <div>Python</div>
